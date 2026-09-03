@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -288,7 +289,7 @@ fun HavenSecurityScreen(
                         }
 
                         Switch(
-                            checked = !isDarkTheme,
+                            checked = isDarkTheme,
                             onCheckedChange = {
                                 HapticUtil.performHeartbeat(context)
                                 onToggleTheme()
@@ -577,14 +578,15 @@ fun HavenSecurityScreen(
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = CalyxPrimary),
                             shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp),
                             modifier = Modifier
                                 .weight(1f)
-                                .height(38.dp)
+                                .height(42.dp)
                                 .testTag("view_seed_phrase_button")
                         ) {
                             Icon(imageVector = Icons.Default.Key, contentDescription = "View Key", modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = "24-Word Key Vault", style = MaterialTheme.typography.labelMedium)
+                            Text(text = "24-Word Vault", style = MaterialTheme.typography.labelMedium, maxLines = 1)
                         }
 
                         OutlinedButton(
@@ -595,13 +597,14 @@ fun HavenSecurityScreen(
                                 showExportedBackupDialog = true
                             },
                             shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp),
                             modifier = Modifier
                                 .weight(1f)
-                                .height(38.dp)
+                                .height(42.dp)
                         ) {
                             Icon(imageVector = Icons.Default.Upload, contentDescription = "Export", modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = "Export Backup", style = MaterialTheme.typography.labelMedium)
+                            Text(text = "Export Backup", style = MaterialTheme.typography.labelMedium, maxLines = 1)
                         }
                     }
 
