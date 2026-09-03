@@ -1,0 +1,131 @@
+<resources>
+    <string name="app_name">Calyx</string>
+
+    <!-- Navigation Tabs -->
+    <string name="nav_tab_blueprint">Blueprint</string>
+    <string name="nav_tab_detective">Detective</string>
+    <string name="nav_tab_clinical">Clinical</string>
+    <string name="nav_tab_haven">Haven</string>
+
+    <!-- Cycle Phases -->
+    <string name="phase_menstrual">Menstrual Phase</string>
+    <string name="phase_menstrual_desc">Rest &amp; Nurture • Fat-burning metabolic shift</string>
+    <string name="phase_follicular">Follicular Phase</string>
+    <string name="phase_follicular_desc">Rise &amp; Bloom • High energy, creativity &amp; stamina</string>
+    <string name="phase_ovulatory">Ovulatory Peak</string>
+    <string name="phase_ovulatory_desc">Peak Vibe • High verbal fluency &amp; social connection</string>
+    <string name="phase_luteal">Luteal Phase</string>
+    <string name="phase_luteal_desc">Ground &amp; Focus • Endurance, precision &amp; steady workload</string>
+
+    <!-- Home Screen -->
+    <string name="home_header_title">Calyx Circadian Sync</string>
+    <string name="home_header_subtitle">Biological Phase &amp; Hormonal Rhythm</string>
+    <string name="cycle_orbit_timeline">CYCLE ORBIT TIMELINE</string>
+    <string name="jump_to_today">Jump to Today (D%1$d)</string>
+    <string name="day_format">Day %1$d of %2$d</string>
+    <string name="log_symptoms">Log Symptoms</string>
+    <string name="period_history">Period History</string>
+    <string name="lock_haven">Lock Haven</string>
+    <string name="vis_mode_dial">Circular Dial</string>
+    <string name="vis_mode_wave">Wave Canvas</string>
+    <string name="todays_signals">Today\'s Signals</string>
+    <string name="quick_checkin_title">Daily Biomarker Check-In</string>
+
+    <!-- Flow Intensities -->
+    <string name="flow_none">None</string>
+    <string name="flow_spotting">Spotting</string>
+    <string name="flow_light">Light</string>
+    <string name="flow_medium">Medium</string>
+    <string name="flow_heavy">Heavy</string>
+
+    <!-- Biomarker Metrics -->
+    <string name="flow_label">Flow Intensity</string>
+    <string name="energy_label">Energy Level</string>
+    <string name="mood_label">Mood</string>
+    <string name="bbt_label">Basal Body Temp (°C)</string>
+    <string name="hrv_label">HRV (ms)</string>
+    <string name="sleep_label">Sleep Hours</string>
+    <string name="pain_label">Pain Level</string>
+    <string name="symptoms_label">Symptoms &amp; Sensations</string>
+    <string name="save_checkin">Save Check-In</string>
+    <string name="checkin_saved">Saved successfully</string>
+
+    <!-- Insights & Guidance -->
+    <string name="gemini_insights_title">Personalized Hormonal Guidance</string>
+    <string name="gemini_insights_subtitle">Gemini AI Endocrine Advisor</string>
+    <string name="gemini_analyzing">Analyzing your biomarkers...</string>
+    <string name="refresh_guidance">Refresh Guidance</string>
+    <string name="training_title">TRAINING</string>
+    <string name="nutrition_title">NUTRITION</string>
+    <string name="sleep_title">SLEEP</string>
+    <string name="biomarkers_title">BIOMARKER</string>
+
+    <!-- Fitness Correlation -->
+    <string name="fitness_title">Athletic Cycle Synchronization</string>
+    <string name="fitness_subtitle">Phase-Based Performance Tuning</string>
+    <string name="metric_cardio">Cardio Strain</string>
+    <string name="metric_strength">Strength &amp; Power</string>
+    <string name="metric_recovery">Recovery &amp; HRV</string>
+
+    <!-- Detective Screen -->
+    <string name="detective_title">Symptom Detective</string>
+    <string name="detective_subtitle">Cross-cycle correlation &amp; trigger analysis</string>
+    <string name="ask_detective_placeholder">Ask about cycle symptoms, mood, sleep...</string>
+    <string name="send">Send</string>
+    <string name="bbt_title">Basal Body Temperature Shift</string>
+
+    <!-- Clinical Report Screen -->
+    <string name="clinical_title">Clinical Cycle Summary</string>
+    <string name="clinical_subtitle">Physician-ready endocrine report</string>
+    <string name="export_pdf">Export PDF Summary</string>
+    <string name="share_report">Share Report</string>
+
+    <!-- Haven Security Screen -->
+    <string name="haven_title">Haven Security Vault</string>
+    <string name="haven_subtitle">Zero-knowledge local biometric &amp; PIN encryption</string>
+    <string name="dark_mode">Botanical Dark Mode</string>
+    <string name="notifications">Daily Hormonal Notifications</string>
+    <string name="decoy_pin_mode">Decoy Weather PIN</string>
+    <string name="recovery_phrase">12-Word Recovery Phrase</string>
+    <string name="erase_data">Erase All Data</string>
+    <string name="cloud_backup">Encrypted Cloud Backup</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="close">Close</string>
+    <string name="view_details">View Details</string>
+    <string name="view_full_report">View Full Report</string>
+    <string name="view_full_transcript">Full Doctor Summary</string>
+    <string name="info_hint">Information</string>
+    <string name="biomarker_guide">Biomarker Insights</string>
+
+    <!-- Onboarding Flow -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_start">Get Started</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_slide1_badge">Zero-Knowledge Architecture</string>
+    <string name="onboarding_slide1_title">Private by Design</string>
+    <string name="onboarding_slide1_desc">Your cycle logs, temperatures, and symptoms stay encrypted strictly on this device. No trackers, no data brokers.</string>
+    <string name="onboarding_slide1_pill1">100% Offline Vault</string>
+    <string name="onboarding_slide1_pill2">Zero Data Selling</string>
+    <string name="onboarding_slide1_pill3">Local Encryption</string>
+    <string name="onboarding_slide2_badge">Initial Calibration</string>
+    <string name="onboarding_slide2_title">Sync Your Health Data</string>
+    <string name="onboarding_slide2_desc">Set your cycle length and log morning basal temperature to calibrate phase predictions.</string>
+    <string name="onboarding_slide2_step1_title">1. Last Period Date</string>
+    <string name="onboarding_slide2_step1_desc">Calibrates your current follicular, ovulatory, or luteal phase.</string>
+    <string name="onboarding_slide2_step2_title">2. Morning BBT &amp; HRV</string>
+    <string name="onboarding_slide2_step2_desc">A +0.3°C thermal shift confirms post-ovulatory progesterone rise.</string>
+    <string name="onboarding_slide2_step3_title">3. Daily Check-In</string>
+    <string name="onboarding_slide2_step3_desc">Takes 10 seconds to record flow, energy, mood, and sleep.</string>
+    <string name="onboarding_slide2_sync_btn">Apply 28-Day Baseline</string>
+    <string name="onboarding_slide2_synced">Baseline Configured</string>
+    <string name="onboarding_slide3_badge">Haven Protection</string>
+    <string name="onboarding_slide3_title">You Are in Control</string>
+    <string name="onboarding_slide3_desc">Secure your vault with biometric lock, emergency decoy mode, and clinical PDF exports.</string>
+    <string name="onboarding_slide3_pill1">Biometric / PIN Lock</string>
+    <string name="onboarding_slide3_pill2">Decoy Weather PIN</string>
+    <string name="onboarding_slide3_pill3">Export Physician PDF</string>
+    <string name="onboarding_guide_btn">Replay Onboarding Guide</string>
+    <string name="onboarding_guide_desc">Review privacy model and initial health data sync</string>
+</resources>

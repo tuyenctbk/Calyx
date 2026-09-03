@@ -1,0 +1,6 @@
+{
+  "name": "Calyx",
+  "description": "Privacy-first, clinical-grade hormonal health platform transforming menstrual cycle data into a personalized high-performance blueprint.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

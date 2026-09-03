@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Safe-zone is 66dp centered: (X: 21..87, Y: 21..87) -->
+
+    <!-- Outer Luminous Circadian Orbit Ring -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#52B788"
+        android:strokeWidth="1.6"
+        android:strokeAlpha="0.35"
+        android:pathData="M54,23 A31,31 0 1 1 53.9,23" />
+
+    <!-- Inner Concentric Orbit Track -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#E0A96D"
+        android:strokeWidth="1.0"
+        android:strokeAlpha="0.5"
+        android:pathData="M54,27 A27,27 0 1 1 53.9,27" />
+
+    <!-- 4 Hormonal Phase Nodes along the Orbit -->
+    <!-- Top (Menstrual - Rose) -->
+    <path
+        android:fillColor="#D9777F"
+        android:pathData="M54,23 A3,3 0 1 1 53.9,23" />
+
+    <!-- Right (Follicular - Emerald) -->
+    <path
+        android:fillColor="#43A077"
+        android:pathData="M85,54 A3,3 0 1 1 84.9,54" />
+
+    <!-- Bottom (Ovulatory - Golden Amber) -->
+    <path
+        android:fillColor="#D99B52"
+        android:pathData="M54,85 A3,3 0 1 1 53.9,85" />
+
+    <!-- Left (Luteal - Deep Moss) -->
+    <path
+        android:fillColor="#527E64"
+        android:pathData="M23,54 A3,3 0 1 1 22.9,54" />
+
+    <!-- Outer Protective Botanical Sepals (Emerald to Deep Forest Gradient) -->
+    <path android:pathData="M54,27 C38,40 29,58 35,74 C45,72 50,63 54,50 C58,63 63,72 73,74 C79,58 70,40 54,27 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="27"
+                android:endX="54"
+                android:endY="74"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#74C69D"/>
+                <item android:offset="1.0" android:color="#1B4D3E"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Golden Mid Bloom (Hormonal Radiance) -->
+    <path android:pathData="M54,34 C45,45 42,59 48,68 C51,60 52.8,54 54,46 C55.2,54 57,60 60,68 C66,59 63,45 54,34 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="34"
+                android:endX="54"
+                android:endY="68"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFF2D6"/>
+                <item android:offset="1.0" android:color="#E0A96D"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Porcelain Lotus Core Petal (Pristine Clinical Highlight) -->
+    <path
+        android:fillColor="#F4F9F5"
+        android:pathData="M54,38 C49,48 50,56 52.6,62 C53.2,57 53.6,52 54,47 C54.4,52 54.8,57 55.4,62 C58,56 59,48 54,38 Z" />
+
+    <!-- Central Glowing Spark / Vitality Nucleus -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,52 A1.8,1.8 0 1 1 53.9,52" />
+
+    <!-- Vitality Droplet (Coral / Rose Accent) -->
+    <path
+        android:fillColor="#D9777F"
+        android:pathData="M54,72 C51.5,75.5 51,79 54,82.5 C57,79 56.5,75.5 54,72 Z" />
+
+</vector>
