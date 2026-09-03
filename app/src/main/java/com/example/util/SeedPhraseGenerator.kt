@@ -12,8 +12,8 @@ object SeedPhraseGenerator {
         "aurora", "balsam", "cedar", "dune", "elm", "fern", "grove", "heather",
         "iris", "juniper", "kelp", "laurel", "maple", "nectar", "oak", "pine",
         "quartz", "redwood", "spruce", "tulip", "umber", "violet", "wisteria", "yarrow",
-        "clover", "petal", "stem", "sprout", "botanic", "vital", "matrix", "nexus",
-        "zenith", "aspect", "vector", "beacon", "solace", "refuge", "vault", "sanctuary",
+        "clover", "frond", "stem", "sprout", "botanic", "vital", "matrix", "nexus",
+        "equinox", "aspect", "vector", "beacon", "solace", "refuge", "vault", "sanctuary",
         "quiet", "gentle", "radiant", "luminous", "purity", "tranquil", "steady", "harmony",
         "clarity", "subtle", "tactile", "element", "essence", "balance", "cycle", "stream"
     )

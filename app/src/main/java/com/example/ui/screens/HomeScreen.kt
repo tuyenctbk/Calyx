@@ -144,7 +144,7 @@ fun HomeScreen(
 
     val todayDateStr = remember { SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date()) }
     val todayLog = remember(logs, todayDateStr) {
-        logs.find { it.date == todayDateStr } ?: logs.firstOrNull() ?: CycleLogEntity(date = todayDateStr)
+        logs.find { it.date == todayDateStr } ?: CycleLogEntity(date = todayDateStr)
     }
 
     val todayCycleDay = remember(latestPeriod, avgCycleLen) {

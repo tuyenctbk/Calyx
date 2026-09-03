@@ -1,4 +1,11 @@
 import com.google.gms.googleservices.GoogleServicesPlugin.MissingGoogleServicesStrategy
+import java.util.Properties
+
+// Load signing secrets from local.properties (never committed to VCS)
+val localProps = Properties().also { props ->
+    val localPropsFile = rootProject.file("local.properties")
+    if (localPropsFile.exists()) props.load(localPropsFile.inputStream())
+}
 
 plugins {
   alias(libs.plugins.android.application)
@@ -25,11 +32,10 @@ android {
 
   signingConfigs {
     create("release") {
-      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/my-upload-key.jks"
-      storeFile = file(keystorePath)
-      storePassword = System.getenv("STORE_PASSWORD")
-      keyAlias = "upload"
-      keyPassword = System.getenv("KEY_PASSWORD")
+      storeFile = rootProject.file(localProps.getProperty("STORE_FILE", "common_release_key.jks"))
+      storePassword = localProps.getProperty("STORE_PASSWORD")
+      keyAlias = localProps.getProperty("KEY_ALIAS")
+      keyPassword = localProps.getProperty("KEY_PASSWORD")
     }
     create("debugConfig") {
       storeFile = file("${rootDir}/debug.keystore")

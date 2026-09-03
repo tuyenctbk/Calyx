@@ -470,7 +470,12 @@ fun HavenSecurityScreen(
                     ) {
                         OutlinedTextField(
                             value = primaryPinInput,
-                            onValueChange = { if (it.length <= 4) primaryPinInput = it },
+                            onValueChange = {
+                                if (it.length <= 4) {
+                                    primaryPinInput = it
+                                    pinSavedStatus = false
+                                }
+                            },
                             label = { Text("Primary PIN", fontSize = 11.sp) },
                             modifier = Modifier
                                 .weight(1f)
@@ -479,7 +484,12 @@ fun HavenSecurityScreen(
 
                         OutlinedTextField(
                             value = decoyPinInput,
-                            onValueChange = { if (it.length <= 4) decoyPinInput = it },
+                            onValueChange = {
+                                if (it.length <= 4) {
+                                    decoyPinInput = it
+                                    pinSavedStatus = false
+                                }
+                            },
                             label = { Text("Decoy PIN (Weather)", fontSize = 11.sp) },
                             modifier = Modifier
                                 .weight(1f)

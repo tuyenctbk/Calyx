@@ -184,11 +184,11 @@ class CalyxViewModel(application: Application) : AndroidViewModel(application) {
         val primaryHash = security?.pinHash ?: SeedPhraseGenerator.hashPin("1234")
         val decoyHash = security?.decoyPinHash ?: SeedPhraseGenerator.hashPin("0000")
 
-        return if (hashedInput == primaryHash || enteredPin == "1234") {
+        return if (hashedInput == primaryHash) {
             _isLocked.value = false
             _isDecoyModeActive.value = false
             true
-        } else if (hashedInput == decoyHash || enteredPin == "0000") {
+        } else if (hashedInput == decoyHash) {
             _isLocked.value = false
             _isDecoyModeActive.value = true
             true
@@ -281,7 +281,4 @@ private data class Tuple5<A, B, C, D, E>(
     val a: A, val b: B, val c: C, val d: D, val e: E
 )
 
-private data class Tuple4<A, B, C, D>(
-    val a: A, val b: B, val c: C, val d: D
-)
 

@@ -213,11 +213,12 @@ fun PinEntryOverlay(
                                                             val success = onPinEntered(newPin)
                                                             if (!success) {
                                                                 isError = true
-                                                                errorMessage = "Incorrect PIN. Try primary '1234' or decoy '0000'"
+                                                                errorMessage = "Incorrect PIN. Please try again."
                                                                 HapticUtil.performHeartbeat(context)
                                                                 scope.launch {
                                                                     delay(600)
                                                                     enteredPin = ""
+                                                                    isError = false
                                                                 }
                                                             } else {
                                                                 enteredPin = ""
@@ -261,14 +262,6 @@ fun PinEntryOverlay(
                     }
                 }
 
-                Spacer(modifier = Modifier.height(14.dp))
-
-                Text(
-                    text = "Default: 1234 • Decoy: 0000",
-                    style = MaterialTheme.typography.labelSmall,
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
-                )
             }
         }
     }
