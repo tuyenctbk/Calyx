@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">匯出醫師臨床PDF</string>
     <string name="onboarding_guide_btn">重溫入門導覽</string>
     <string name="onboarding_guide_desc">回顧隱私架構與初始健康數據設定</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven 協定鎖定</string>
+    <string name="pin_lock_subtitle">輸入 PIN 碼（預設：1234）或偽裝 PIN 碼（0000）</string>
+    <string name="pin_error_incorrect">PIN 碼不正確。預設 PIN 碼為 1234。</string>
+    <string name="pin_biometric_unlock">生物辨識解鎖</string>
+    <string name="pin_delete">刪除</string>
 </resources>

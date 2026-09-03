@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Экспорт врачебного PDF</string>
     <string name="onboarding_guide_btn">Повторить вступительный гид</string>
     <string name="onboarding_guide_desc">Обзор модели конфиденциальности и синхронизации данных</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Блокировка протокола Haven</string>
+    <string name="pin_lock_subtitle">Введите PIN (по умолчанию: 1234) или ложный PIN (0000)</string>
+    <string name="pin_error_incorrect">Неверный PIN. PIN по умолчанию: 1234.</string>
+    <string name="pin_biometric_unlock">Биометрическая разблокировка</string>
+    <string name="pin_delete">Удалить</string>
 </resources>

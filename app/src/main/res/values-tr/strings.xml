@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Hekim PDF\'i Dışa Aktar</string>
     <string name="onboarding_guide_btn">Başlangıç Rehberini Yeniden Oynat</string>
     <string name="onboarding_guide_desc">Gizlilik modelini ve veri başlatmasını gözden geçirin</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven Protokol Kilidi</string>
+    <string name="pin_lock_subtitle">PIN girin (Varsayılan: 1234) veya Sahte PIN (0000)</string>
+    <string name="pin_error_incorrect">Hatalı PIN. Varsayılan PIN: 1234.</string>
+    <string name="pin_biometric_unlock">Biyometrik Kilit Açma</string>
+    <string name="pin_delete">Sil</string>
 </resources>

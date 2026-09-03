@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Vie lääkärin PDF</string>
     <string name="onboarding_guide_btn">Näytä aloitusopas uudelleen</string>
     <string name="onboarding_guide_desc">Tarkastele yksityisyysmallia ja tietojen alustusta</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven-protokollalukitus</string>
+    <string name="pin_lock_subtitle">Syötä PIN-koodi (oletus: 1234) tai hämäys-PIN (0000)</string>
+    <string name="pin_error_incorrect">Virheellinen PIN-koodi. Oletuskoodi on 1234.</string>
+    <string name="pin_biometric_unlock">Biometrinen avaus</string>
+    <string name="pin_delete">Poista</string>
 </resources>

@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Exportera läkar-PDF</string>
     <string name="onboarding_guide_btn">Spela upp introduktionsguiden igen</string>
     <string name="onboarding_guide_desc">Granska integritetsmodell och inledande datasynkronisering</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven-protokollås</string>
+    <string name="pin_lock_subtitle">Ange PIN (standard: 1234) eller lock-PIN (0000)</string>
+    <string name="pin_error_incorrect">Fel PIN. Standard-PIN är 1234.</string>
+    <string name="pin_biometric_unlock">Biometrisk upplåsning</string>
+    <string name="pin_delete">Radera</string>
 </resources>

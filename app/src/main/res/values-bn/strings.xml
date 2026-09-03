@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">চিকিৎসক PDF এক্সপোর্ট</string>
     <string name="onboarding_guide_btn">অনবোর্ডিং গাইড পুনরায় দেখুন</string>
     <string name="onboarding_guide_desc">গোপনীয়তা মডেল ও স্বাস্থ্য ডেটা সিঙ্ক পর্যালোচনা করুন</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">হ্যাভেন প্রোটোকল লক</string>
+    <string name="pin_lock_subtitle">পিন লিখুন (ডিফল্ট: 1234) বা ডিকয় পিন (0000)</string>
+    <string name="pin_error_incorrect">ভুল পিন। ডিফল্ট পিন হল 1234।</string>
+    <string name="pin_biometric_unlock">বায়োমেট্রিক আনলক</string>
+    <string name="pin_delete">মুছুন</string>
 </resources>

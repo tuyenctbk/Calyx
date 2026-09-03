@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">医師向けPDF出力</string>
     <string name="onboarding_guide_btn">初期ガイドをもう一度見る</string>
     <string name="onboarding_guide_desc">プライバシーモデルと初期データ設定を確認</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Havenプロトコルロック</string>
+    <string name="pin_lock_subtitle">PINを入力（デフォルト: 1234）またはダミーPIN（0000）</string>
+    <string name="pin_error_incorrect">PINが正しくありません。デフォルトPINは1234です。</string>
+    <string name="pin_biometric_unlock">生体認証ロック解除</string>
+    <string name="pin_delete">削除</string>
 </resources>

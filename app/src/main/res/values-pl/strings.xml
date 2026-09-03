@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Eksport Lekarskiego PDF</string>
     <string name="onboarding_guide_btn">Odtwórz Przewodnik Wstępny</string>
     <string name="onboarding_guide_desc">Przejrzyj model prywatności i konfigurację danych</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Blokada protokołu Haven</string>
+    <string name="pin_lock_subtitle">Wprowadź PIN (domyślny: 1234) lub PIN pułapkę (0000)</string>
+    <string name="pin_error_incorrect">Nieprawidłowy PIN. Domyślny PIN to 1234.</string>
+    <string name="pin_biometric_unlock">Odblokowanie biometryczne</string>
+    <string name="pin_delete">Usuń</string>
 </resources>

@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">डॉक्टर PDF निर्यात</string>
     <string name="onboarding_guide_btn">शुरुआती गाइड पुनः देखें</string>
     <string name="onboarding_guide_desc">गोपनीयता मॉडल और स्वास्थ्य डेटा सिंक की समीक्षा करें</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">हेवन प्रोटोकॉल लॉक</string>
+    <string name="pin_lock_subtitle">पिन दर्ज करें (डिफ़ॉल्ट: 1234) या डिकॉय पिन (0000)</string>
+    <string name="pin_error_incorrect">गलत पिन। डिफ़ॉल्ट पिन 1234 है।</string>
+    <string name="pin_biometric_unlock">बायोमेट्रिक अनलॉक</string>
+    <string name="pin_delete">हटाएं</string>
 </resources>

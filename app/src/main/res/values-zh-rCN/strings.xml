@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">导出医师临床PDF</string>
     <string name="onboarding_guide_btn">重温新手引导</string>
     <string name="onboarding_guide_desc">查看隐私模型与初始健康数据设置</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven 协议锁</string>
+    <string name="pin_lock_subtitle">输入 PIN 码（默认：1234）或伪装 PIN 码（0000）</string>
+    <string name="pin_error_incorrect">PIN 码不正确。默认 PIN 码为 1234。</string>
+    <string name="pin_biometric_unlock">生物识别解锁</string>
+    <string name="pin_delete">删除</string>
 </resources>

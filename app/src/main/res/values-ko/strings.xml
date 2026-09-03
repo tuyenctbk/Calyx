@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">의사용 PDF 내보내기</string>
     <string name="onboarding_guide_btn">온보딩 가이드 다시보기</string>
     <string name="onboarding_guide_desc">개인정보 보호 모델 및 초기 데이터 동기화 확인</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven 프로토콜 잠금</string>
+    <string name="pin_lock_subtitle">PIN 입력 (기본값: 1234) 또는 미끼 PIN (0000)</string>
+    <string name="pin_error_incorrect">잘못된 PIN입니다. 기본 PIN은 1234입니다.</string>
+    <string name="pin_biometric_unlock">생체 인식 잠금 해제</string>
+    <string name="pin_delete">삭제</string>
 </resources>

@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Xuất PDF cho bác sĩ</string>
     <string name="onboarding_guide_btn">Xem lại hướng dẫn ban đầu</string>
     <string name="onboarding_guide_desc">Xem lại mô hình bảo mật và khởi tạo dữ liệu sức khỏe</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Khóa giao thức Haven</string>
+    <string name="pin_lock_subtitle">Nhập mã PIN (Mặc định: 1234) hoặc PIN ngụy trang (0000)</string>
+    <string name="pin_error_incorrect">Mã PIN không đúng. Mã PIN mặc định là 1234.</string>
+    <string name="pin_biometric_unlock">Mở khóa sinh trắc học</string>
+    <string name="pin_delete">Xóa</string>
 </resources>

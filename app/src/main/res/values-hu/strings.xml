@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Orvosi PDF exportálása</string>
     <string name="onboarding_guide_btn">Útmutató újrajátszása</string>
     <string name="onboarding_guide_desc">Adatvédelmi modell és szinkronizálás áttekintése</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven Protokollzár</string>
+    <string name="pin_lock_subtitle">Adja meg a PIN-kódot (Alapértelmezett: 1234) vagy a csaló PIN-t (0000)</string>
+    <string name="pin_error_incorrect">Helytelen PIN-kód. Az alapértelmezett PIN: 1234.</string>
+    <string name="pin_biometric_unlock">Biometrikus feloldás</string>
+    <string name="pin_delete">Törlés</string>
 </resources>

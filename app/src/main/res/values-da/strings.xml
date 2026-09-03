@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Eksportér læge-PDF</string>
     <string name="onboarding_guide_btn">Genafspil introduktion</string>
     <string name="onboarding_guide_desc">Gennemgå privatlivsmodel og indledende synkronisering</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven-protokollås</string>
+    <string name="pin_lock_subtitle">Indtast pinkode (standard: 1234) eller lokkepin (0000)</string>
+    <string name="pin_error_incorrect">Forkert pinkode. Standard pinkode er 1234.</string>
+    <string name="pin_biometric_unlock">Biometrisk oplåsning</string>
+    <string name="pin_delete">Slet</string>
 </resources>

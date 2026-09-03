@@ -58,6 +58,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.res.stringResource
+import com.example.R
 import com.example.ui.theme.CalyxDarkBg
 import com.example.ui.theme.CalyxPrimary
 import com.example.ui.theme.CalyxRose
@@ -72,12 +74,15 @@ import kotlinx.coroutines.launch
 fun PinEntryOverlay(
     onPinEntered: (String) -> Boolean,
     onBiometricUnlock: (() -> Unit)? = null,
-    titleText: String = "HAVEN PROTOCOL LOCK",
-    subtitleText: String = "Enter PIN or Decoy PIN to continue"
+    titleText: String = stringResource(R.string.pin_lock_title),
+    subtitleText: String = stringResource(R.string.pin_lock_subtitle)
 ) {
     var enteredPin by remember { mutableStateOf("") }
     var isError by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf("") }
+    val defaultErrorMessage = stringResource(R.string.pin_error_incorrect)
+    val deleteContentDescription = stringResource(R.string.pin_delete)
+    val bioContentDescription = stringResource(R.string.pin_biometric_unlock)
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
 
@@ -213,7 +218,7 @@ fun PinEntryOverlay(
                                                             val success = onPinEntered(newPin)
                                                             if (!success) {
                                                                 isError = true
-                                                                errorMessage = "Incorrect PIN. Please try again."
+                                                                errorMessage = defaultErrorMessage
                                                                 HapticUtil.performHeartbeat(context)
                                                                 scope.launch {
                                                                     delay(600)
@@ -234,7 +239,7 @@ fun PinEntryOverlay(
                                         "DEL" -> {
                                             Icon(
                                                 imageVector = Icons.AutoMirrored.Filled.Backspace,
-                                                contentDescription = "Delete",
+                                                contentDescription = deleteContentDescription,
                                                 tint = MaterialTheme.colorScheme.onSurface,
                                                 modifier = Modifier.size(22.dp)
                                             )
@@ -242,7 +247,7 @@ fun PinEntryOverlay(
                                         "BIO" -> {
                                             Icon(
                                                 imageVector = Icons.Default.Fingerprint,
-                                                contentDescription = "Biometric Unlock",
+                                                contentDescription = bioContentDescription,
                                                 tint = CalyxPrimary,
                                                 modifier = Modifier.size(24.dp)
                                             )

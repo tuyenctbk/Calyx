@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">ส่งออกรายงาน PDF สำหรับแพทย์</string>
     <string name="onboarding_guide_btn">ดูคู่มือเริ่มต้นอีกครั้ง</string>
     <string name="onboarding_guide_desc">ทบทวนโมเดลความเป็นส่วนตัวและการซิงค์ข้อมูลเริ่มต้น</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">การล็อกโปรโตคอล Haven</string>
+    <string name="pin_lock_subtitle">ป้อนรหัส PIN (ค่าเริ่มต้น: 1234) หรือ PIN ลวง (0000)</string>
+    <string name="pin_error_incorrect">รหัส PIN ไม่ถูกต้อง PIN เริ่มต้นคือ 1234</string>
+    <string name="pin_biometric_unlock">ปลดล็อกด้วยไบโอเมตริก</string>
+    <string name="pin_delete">ลบ</string>
 </resources>

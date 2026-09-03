@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Ekspor PDF Klinis</string>
     <string name="onboarding_guide_btn">Putar Ulang Panduan Awal</string>
     <string name="onboarding_guide_desc">Tinjau model privasi dan sinkronisasi data awal</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Kunci Protokol Haven</string>
+    <string name="pin_lock_subtitle">Masukkan PIN (Default: 1234) atau PIN Umpan (0000)</string>
+    <string name="pin_error_incorrect">PIN salah. PIN default adalah 1234.</string>
+    <string name="pin_biometric_unlock">Buka Kunci Biometrik</string>
+    <string name="pin_delete">Hapus</string>
 </resources>

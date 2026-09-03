@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Esporta PDF Medico</string>
     <string name="onboarding_guide_btn">Rivedi la Guida Iniziale</string>
     <string name="onboarding_guide_desc">Esamina il modello di privacy e la sincronizzazione iniziale</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Blocco protocollo Haven</string>
+    <string name="pin_lock_subtitle">Inserisci il PIN (Predefinito: 1234) o PIN civetta (0000)</string>
+    <string name="pin_error_incorrect">PIN errato. Il PIN predefinito è 1234.</string>
+    <string name="pin_biometric_unlock">Sblocco biometrico</string>
+    <string name="pin_delete">Cancella</string>
 </resources>

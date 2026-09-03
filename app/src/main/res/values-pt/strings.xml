@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Exportar PDF Clínico</string>
     <string name="onboarding_guide_btn">Rever Guia de Boas-Vindas</string>
     <string name="onboarding_guide_desc">Revisar modelo de privacidade e calibração de dados</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Bloqueio do Protocolo Haven</string>
+    <string name="pin_lock_subtitle">Introduza o PIN (Predefinido: 1234) ou PIN isca (0000)</string>
+    <string name="pin_error_incorrect">PIN incorreto. O PIN predefinido é 1234.</string>
+    <string name="pin_biometric_unlock">Desbloqueio biométrico</string>
+    <string name="pin_delete">Eliminar</string>
 </resources>

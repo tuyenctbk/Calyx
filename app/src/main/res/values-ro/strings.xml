@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Export PDF medical</string>
     <string name="onboarding_guide_btn">Reia ghidul de bun venit</string>
     <string name="onboarding_guide_desc">Revizuiește modelul de confidențialitate și inițializarea datelor</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Blocare Protocol Haven</string>
+    <string name="pin_lock_subtitle">Introduceți PIN-ul (implicit: 1234) sau PIN-ul momeală (0000)</string>
+    <string name="pin_error_incorrect">PIN incorect. PIN-ul implicit este 1234.</string>
+    <string name="pin_biometric_unlock">Deblocare biometrică</string>
+    <string name="pin_delete">Șterge</string>
 </resources>

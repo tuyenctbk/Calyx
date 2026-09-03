@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Export PDF Médical</string>
     <string name="onboarding_guide_btn">Revoir le Guide de Départ</string>
     <string name="onboarding_guide_desc">Consulter le modèle de confidentialité et la synchronisation</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Verrouillage du protocole Haven</string>
+    <string name="pin_lock_subtitle">Entrez le code PIN (Par défaut: 1234) ou le PIN leurre (0000)</string>
+    <string name="pin_error_incorrect">Code PIN incorrect. Le code par défaut est 1234.</string>
+    <string name="pin_biometric_unlock">Déverrouillage biométrique</string>
+    <string name="pin_delete">Effacer</string>
 </resources>

@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Export lékařského PDF</string>
     <string name="onboarding_guide_btn">Znovu zobrazit průvodce</string>
     <string name="onboarding_guide_desc">Přehled modelu soukromí a synchronizace počátečních dat</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Zámek protokolu Haven</string>
+    <string name="pin_lock_subtitle">Zadejte PIN (výchozí: 1234) nebo klamný PIN (0000)</string>
+    <string name="pin_error_incorrect">Nesprávný PIN. Výchozí PIN je 1234.</string>
+    <string name="pin_biometric_unlock">Biometrické odemknutí</string>
+    <string name="pin_delete">Smazat</string>
 </resources>

@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Eksporter lege-PDF</string>
     <string name="onboarding_guide_btn">Vis introduksjonsguide på nytt</string>
     <string name="onboarding_guide_desc">Gjennomgå personvernmodell og innledende synkronisering</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven-protokolllås</string>
+    <string name="pin_lock_subtitle">Tast inn PIN (standard: 1234) eller lokke-PIN (0000)</string>
+    <string name="pin_error_incorrect">Feil PIN. Standard PIN er 1234.</string>
+    <string name="pin_biometric_unlock">Biometrisk opplåsing</string>
+    <string name="pin_delete">Slett</string>
 </resources>

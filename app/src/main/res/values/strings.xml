@@ -128,4 +128,11 @@
     <string name="onboarding_slide3_pill3">Export Physician PDF</string>
     <string name="onboarding_guide_btn">Replay Onboarding Guide</string>
     <string name="onboarding_guide_desc">Review privacy model and initial health data sync</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven Protocol Lock</string>
+    <string name="pin_lock_subtitle">Enter PIN (Default: 1234) or Decoy PIN (0000)</string>
+    <string name="pin_error_incorrect">Incorrect PIN. Default PIN is 1234.</string>
+    <string name="pin_biometric_unlock">Biometric Unlock</string>
+    <string name="pin_delete">Delete</string>
 </resources>

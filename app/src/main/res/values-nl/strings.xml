@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Medische PDF Exporteren</string>
     <string name="onboarding_guide_btn">Introductiegids Opnieuw Bekijken</string>
     <string name="onboarding_guide_desc">Privacymodel en eerste synchronisatie bekijken</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Haven-protocolvergrendeling</string>
+    <string name="pin_lock_subtitle">Voer pincode in (standaard: 1234) of decoy-pincode (0000)</string>
+    <string name="pin_error_incorrect">Onjuiste pincode. Standaard pincode is 1234.</string>
+    <string name="pin_biometric_unlock">Biometrische ontgrendeling</string>
+    <string name="pin_delete">Wissen</string>
 </resources>

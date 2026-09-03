@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Εξαγωγή ιατρικού PDF</string>
     <string name="onboarding_guide_btn">Επανάληψη οδηγού έναρξης</string>
     <string name="onboarding_guide_desc">Επισκόπηση μοντέλου απορρήτου και αρχικού συγχρονισμού</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Κλείδωμα Πρωτοκόλλου Haven</string>
+    <string name="pin_lock_subtitle">Εισαγάγετε PIN (Προεπιλογή: 1234) ή παραπλανητικό PIN (0000)</string>
+    <string name="pin_error_incorrect">Λανθασμένο PIN. Το προεπιλεγμένο PIN είναι 1234.</string>
+    <string name="pin_biometric_unlock">Βιομετρικό ξεκλείδωμα</string>
+    <string name="pin_delete">Διαγραφή</string>
 </resources>

@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">Eksport PDF Perubatan</string>
     <string name="onboarding_guide_btn">Ulang Panduan Pengenalan</string>
     <string name="onboarding_guide_desc">Semak model privasi dan penyelarasan data awal</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">Kunci Protokol Haven</string>
+    <string name="pin_lock_subtitle">Masukkan PIN (Lalai: 1234) atau PIN Pengumpan (0000)</string>
+    <string name="pin_error_incorrect">PIN salah. PIN lalai ialah 1234.</string>
+    <string name="pin_biometric_unlock">Buka Kunci Biometrik</string>
+    <string name="pin_delete">Padam</string>
 </resources>

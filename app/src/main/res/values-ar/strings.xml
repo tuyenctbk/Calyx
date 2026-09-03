@@ -108,4 +108,11 @@
     <string name="onboarding_slide3_pill3">تصدير تقرير طبي PDF</string>
     <string name="onboarding_guide_btn">إعادة تشغيل دليل الإعداد</string>
     <string name="onboarding_guide_desc">مراجعة نموذج الخصوصية ومزامنة البيانات الصحية الأولية</string>
+
+    <!-- Haven PIN Lock -->
+    <string name="pin_lock_title">قفل بروتوكول الملاذ</string>
+    <string name="pin_lock_subtitle">أدخل رمز PIN (الافتراضي: 1234) أو رمز التمويه (0000)</string>
+    <string name="pin_error_incorrect">رمز PIN غير صحيح. الرمز الافتراضي هو 1234.</string>
+    <string name="pin_biometric_unlock">إلغاء القفل بالبصمة</string>
+    <string name="pin_delete">حذف</string>
 </resources>
