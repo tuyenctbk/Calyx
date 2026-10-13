@@ -16,8 +16,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Thermostat
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -44,6 +47,7 @@ import com.example.data.local.entities.CycleLogEntity
 import com.example.ui.theme.CalyxPrimary
 import com.example.ui.theme.CalyxSecondary
 import com.example.ui.theme.CalyxSurface
+import com.example.ui.theme.CalyxSurfaceVariant
 import com.example.ui.theme.CalyxTertiary
 import com.example.ui.theme.PhaseOvulatoryColor
 import com.example.util.HapticUtil
@@ -145,37 +149,83 @@ fun BbtChart(
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Canvas Chart Area with Touch Interaction
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(180.dp)
-            ) {
-                Canvas(
+            // Canvas Chart Area or Empty State Placeholder
+            if (sortedLogs.size < 2) {
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = CalyxSurfaceVariant.copy(alpha = 0.35f),
                     modifier = Modifier
-                        .fillMaxSize()
-                        .pointerInput(sortedLogs) {
-                            detectTapGestures { offset ->
-                                if (sortedLogs.size > 1) {
-                                    val step = size.width / (sortedLogs.size - 1)
-                                    val nearestIndex = ((offset.x + step / 2) / step).toInt().coerceIn(0, sortedLogs.size - 1)
-                                    if (nearestIndex != inspectedIndex) {
-                                        inspectedIndex = nearestIndex
-                                        HapticUtil.performHeartbeat(context)
+                        .fillMaxWidth()
+                        .height(180.dp)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(40.dp)
+                                .clip(CircleShape)
+                                .background(CalyxSecondary.copy(alpha = 0.15f)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Thermostat,
+                                contentDescription = null,
+                                tint = CalyxSecondary,
+                                modifier = Modifier.size(20.dp)
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = "No Thermal Shift Data Yet",
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = "Log morning Basal Body Temperature (BBT) daily to plot your ovulation curve.",
+                            style = MaterialTheme.typography.bodySmall,
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                            lineHeight = 16.sp
+                        )
+                    }
+                }
+            } else {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(180.dp)
+                ) {
+                    Canvas(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .pointerInput(sortedLogs) {
+                                detectTapGestures { offset ->
+                                    if (sortedLogs.size > 1) {
+                                        val step = size.width / (sortedLogs.size - 1)
+                                        val nearestIndex = ((offset.x + step / 2) / step).toInt().coerceIn(0, sortedLogs.size - 1)
+                                        if (nearestIndex != inspectedIndex) {
+                                            inspectedIndex = nearestIndex
+                                            HapticUtil.performHeartbeat(context)
+                                        }
                                     }
                                 }
                             }
-                        }
-                ) {
-                    val width = size.width
-                    val height = size.height
+                    ) {
+                        val width = size.width
+                        val height = size.height
 
-                    if (sortedLogs.size < 2) return@Canvas
-
-                    val minTemp = 36.0f
-                    val maxTemp = 37.2f
-                    val tempRange = maxTemp - minTemp
-                    val stepX = width / (sortedLogs.size - 1)
+                        val minTemp = 36.0f
+                        val maxTemp = 37.2f
+                        val tempRange = maxTemp - minTemp
+                        val stepX = width / (sortedLogs.size - 1)
 
                     // 1. Grid Horizontal Guidelines (36.2°, 36.5° Coverline, 36.8°)
                     listOf(36.2f, 36.5f, 36.8f).forEach { temp ->
@@ -262,6 +312,7 @@ fun BbtChart(
                                 center = pt
                             )
                         }
+                    }
                     }
                 }
             }

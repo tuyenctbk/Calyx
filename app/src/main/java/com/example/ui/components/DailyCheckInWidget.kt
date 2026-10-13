@@ -340,7 +340,7 @@ fun DailyCheckInWidget(
                     }
                 ) {
                     Text(
-                        text = if (showMoreSymptoms) "Collapse" else "+ More (${moreSymptoms.size})",
+                        text = if (showMoreSymptoms) stringResource(R.string.collapse) else stringResource(R.string.more_count, moreSymptoms.size),
                         style = MaterialTheme.typography.labelSmall,
                         fontSize = 11.sp,
                         color = CalyxSecondary,

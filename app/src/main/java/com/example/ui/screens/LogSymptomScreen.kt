@@ -65,10 +65,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.R
 import com.example.data.local.entities.CycleLogEntity
 import com.example.data.local.entities.CyclePhase
 import com.example.data.local.entities.FlowIntensity
@@ -156,7 +158,7 @@ fun LogSymptomScreen(
                 Spacer(modifier = Modifier.width(4.dp))
                 Column {
                     Text(
-                        text = "LOG BLUEPRINT",
+                        text = stringResource(R.string.log_blueprint_title),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface,
@@ -212,7 +214,7 @@ fun LogSymptomScreen(
                 )
                 Spacer(modifier = Modifier.width(4.dp))
                 Text(
-                    text = "Save",
+                    text = stringResource(R.string.btn_save),
                     style = MaterialTheme.typography.labelLarge,
                     fontWeight = FontWeight.SemiBold,
                     maxLines = 1,
@@ -702,8 +704,8 @@ fun LogSymptomScreen(
         OutlinedTextField(
             value = notesText,
             onValueChange = { notesText = it },
-            label = { Text("Private Zero-Knowledge Notes") },
-            placeholder = { Text("Log subjective feelings, diet, energy shifts...") },
+            label = { Text(stringResource(R.string.private_notes_label)) },
+            placeholder = { Text(stringResource(R.string.private_notes_placeholder)) },
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = CalyxPrimary,
                 unfocusedBorderColor = MaterialTheme.colorScheme.outline.copy(alpha = 0.4f)

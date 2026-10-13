@@ -17,6 +17,18 @@ interface CalyxDao {
     @Query("SELECT * FROM cycle_logs WHERE date = :date LIMIT 1")
     suspend fun getLogForDate(date: String): CycleLogEntity?
 
+    @Query("SELECT * FROM cycle_logs WHERE date BETWEEN :startDate AND :endDate ORDER BY date ASC")
+    fun getLogsInRange(startDate: String, endDate: String): Flow<List<CycleLogEntity>>
+
+    @Query("SELECT * FROM cycle_logs WHERE symptoms LIKE '%' || :symptom || '%' ORDER BY date DESC")
+    fun getLogsWithSymptom(symptom: String): Flow<List<CycleLogEntity>>
+
+    @Query("SELECT AVG(energyLevel) FROM cycle_logs WHERE energyLevel > 0")
+    fun getAverageEnergy(): Flow<Float?>
+
+    @Query("SELECT AVG(painLevel) FROM cycle_logs WHERE painLevel >= 0")
+    fun getAveragePain(): Flow<Float?>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLog(log: CycleLogEntity)
 

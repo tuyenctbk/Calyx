@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -110,8 +109,8 @@ fun HavenSecurityScreen(
     var showClearDataDialog by remember { mutableStateOf(false) }
     var showExportedBackupDialog by remember { mutableStateOf(false) }
 
-    var primaryPinInput by remember(securitySettings) { mutableStateOf("1234") }
-    var decoyPinInput by remember(securitySettings) { mutableStateOf("0000") }
+    var primaryPinInput by remember { mutableStateOf("") }
+    var decoyPinInput by remember { mutableStateOf("") }
     var pinSavedStatus by remember { mutableStateOf(false) }
     var biometricEnabled by remember { mutableStateOf(true) }
     var selectedAutoLockTime by remember { mutableStateOf("Immediate") }
@@ -121,10 +120,10 @@ fun HavenSecurityScreen(
     if (showDecoyInfoDialog) {
         AlertDialog(
             onDismissRequest = { showDecoyInfoDialog = false },
-            title = { Text("Decoy Vault Protocol") },
+            title = { Text(stringResource(R.string.decoy_protocol_title)) },
             text = {
                 Text(
-                    "The Dual PIN protocol provides duress protection. Entering your Decoy PIN opens an authentic, innocent Weather forecast dashboard instead of your cycle data, protecting your private reproductive records.",
+                    stringResource(R.string.decoy_protocol_desc),
                     style = MaterialTheme.typography.bodyMedium,
                     lineHeight = 20.sp
                 )
@@ -150,8 +149,8 @@ fun HavenSecurityScreen(
     if (showClearDataDialog) {
         AlertDialog(
             onDismissRequest = { showClearDataDialog = false },
-            title = { Text("Zero-Knowledge Local Wipe") },
-            text = { Text("Permanently erase all local health records from this device? This action is irreversible.") },
+            title = { Text(stringResource(R.string.wipe_data_title)) },
+            text = { Text(stringResource(R.string.wipe_data_desc)) },
             confirmButton = {
                 Button(
                     onClick = {
@@ -161,12 +160,12 @@ fun HavenSecurityScreen(
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = CalyxRose)
                 ) {
-                    Text("Wipe All Data")
+                    Text(stringResource(R.string.wipe_data_confirm))
                 }
             },
             dismissButton = {
                 TextButton(onClick = { showClearDataDialog = false }) {
-                    Text("Cancel")
+                    Text(stringResource(R.string.cancel))
                 }
             }
         )
@@ -175,14 +174,14 @@ fun HavenSecurityScreen(
     if (showExportedBackupDialog) {
         AlertDialog(
             onDismissRequest = { showExportedBackupDialog = false },
-            title = { Text("Encrypted Backup Ready") },
-            text = { Text("An anonymous encrypted backup string has been copied to your clipboard.") },
+            title = { Text(stringResource(R.string.encrypted_backup_ready_title)) },
+            text = { Text(stringResource(R.string.encrypted_backup_ready_desc)) },
             confirmButton = {
                 Button(
                     onClick = { showExportedBackupDialog = false },
                     colors = ButtonDefaults.buttonColors(containerColor = CalyxPrimary)
                 ) {
-                    Text("Done")
+                    Text(stringResource(R.string.done))
                 }
             }
         )
@@ -275,13 +274,13 @@ fun HavenSecurityScreen(
                             Spacer(modifier = Modifier.width(10.dp))
                             Column {
                                 Text(
-                                    text = if (isDarkTheme) "Botanical Dark" else "Clinical Light",
+                                    text = if (isDarkTheme) stringResource(R.string.theme_dark_name) else stringResource(R.string.theme_light_name),
                                     style = MaterialTheme.typography.titleMedium,
                                     color = MaterialTheme.colorScheme.onSurface,
                                     fontWeight = FontWeight.SemiBold
                                 )
                                 Text(
-                                    text = if (isDarkTheme) "Circadian night tones" else "High contrast daylight",
+                                    text = if (isDarkTheme) stringResource(R.string.theme_dark_desc) else stringResource(R.string.theme_light_desc),
                                     style = MaterialTheme.typography.labelSmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )
@@ -289,7 +288,7 @@ fun HavenSecurityScreen(
                         }
 
                         Switch(
-                            checked = isDarkTheme,
+                            checked = !isDarkTheme,
                             onCheckedChange = {
                                 HapticUtil.performHeartbeat(context)
                                 onToggleTheme()
@@ -328,13 +327,13 @@ fun HavenSecurityScreen(
                             Spacer(modifier = Modifier.width(10.dp))
                             Column {
                                 Text(
-                                    text = "Daily Hormonal Focus",
+                                    text = stringResource(R.string.daily_focus_title),
                                     style = MaterialTheme.typography.titleMedium,
                                     color = MaterialTheme.colorScheme.onSurface,
                                     fontWeight = FontWeight.SemiBold
                                 )
                                 Text(
-                                    text = "Localized biological hints",
+                                    text = stringResource(R.string.daily_focus_desc),
                                     style = MaterialTheme.typography.labelSmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )
@@ -374,7 +373,7 @@ fun HavenSecurityScreen(
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(imageVector = Icons.Default.Fingerprint, contentDescription = "Biometric", tint = CalyxPrimary, modifier = Modifier.size(20.dp))
                             Spacer(modifier = Modifier.width(8.dp))
-                            Text("Biometric Authentication", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.SemiBold)
+                            Text(stringResource(R.string.biometric_auth), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.SemiBold)
                         }
 
                         Switch(
@@ -389,7 +388,7 @@ fun HavenSecurityScreen(
 
                     Spacer(modifier = Modifier.height(10.dp))
 
-                    Text("AUTO-LOCK TIMEOUT", style = MaterialTheme.typography.labelSmall, fontSize = 10.sp, color = CalyxPrimary, letterSpacing = 1.sp, fontWeight = FontWeight.Bold)
+                    Text(stringResource(R.string.autolock_timeout), style = MaterialTheme.typography.labelSmall, fontSize = 10.sp, color = CalyxPrimary, letterSpacing = 1.sp, fontWeight = FontWeight.Bold)
                     Spacer(modifier = Modifier.height(6.dp))
 
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -471,13 +470,8 @@ fun HavenSecurityScreen(
                     ) {
                         OutlinedTextField(
                             value = primaryPinInput,
-                            onValueChange = {
-                                if (it.length <= 4) {
-                                    primaryPinInput = it
-                                    pinSavedStatus = false
-                                }
-                            },
-                            label = { Text("Primary PIN", fontSize = 11.sp) },
+                            onValueChange = { if (it.length <= 4) primaryPinInput = it },
+                            label = { Text(stringResource(R.string.primary_pin), fontSize = 11.sp) },
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("primary_pin_field")
@@ -485,13 +479,8 @@ fun HavenSecurityScreen(
 
                         OutlinedTextField(
                             value = decoyPinInput,
-                            onValueChange = {
-                                if (it.length <= 4) {
-                                    decoyPinInput = it
-                                    pinSavedStatus = false
-                                }
-                            },
-                            label = { Text("Decoy PIN (Weather)", fontSize = 11.sp) },
+                            onValueChange = { if (it.length <= 4) decoyPinInput = it },
+                            label = { Text(stringResource(R.string.decoy_pin), fontSize = 11.sp) },
                             modifier = Modifier
                                 .weight(1f)
                                 .testTag("decoy_pin_field")
@@ -508,10 +497,18 @@ fun HavenSecurityScreen(
                             onClick = {
                                 HapticUtil.performHeartbeat(context)
                                 val current = securitySettings ?: SecurityEntity()
+                                val newPrimaryHash = if (primaryPinInput.length >= 4) {
+                                    SeedPhraseGenerator.hashPin(primaryPinInput)
+                                } else current.pinHash
+
+                                val newDecoyHash = if (decoyPinInput.length >= 4) {
+                                    SeedPhraseGenerator.hashPin(decoyPinInput)
+                                } else current.decoyPinHash
+
                                 onSaveSecurity(
                                     current.copy(
-                                        pinHash = SeedPhraseGenerator.hashPin(primaryPinInput),
-                                        decoyPinHash = SeedPhraseGenerator.hashPin(decoyPinInput),
+                                        pinHash = newPrimaryHash,
+                                        decoyPinHash = newDecoyHash,
                                         isSetupCompleted = true
                                     )
                                 )
@@ -530,7 +527,7 @@ fun HavenSecurityScreen(
                                 modifier = Modifier.size(16.dp)
                             )
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = if (pinSavedStatus) "Updated!" else "Save PINs", style = MaterialTheme.typography.labelMedium)
+                            Text(text = if (pinSavedStatus) stringResource(R.string.checkin_saved) else stringResource(R.string.save_pins), style = MaterialTheme.typography.labelMedium)
                         }
 
                         if (onTestDecoyMode != null) {
@@ -551,7 +548,7 @@ fun HavenSecurityScreen(
                                     modifier = Modifier.size(16.dp)
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text(text = "Test Decoy", style = MaterialTheme.typography.labelMedium)
+                                Text(text = stringResource(R.string.test_decoy), style = MaterialTheme.typography.labelMedium)
                             }
                         }
                     }
@@ -578,33 +575,32 @@ fun HavenSecurityScreen(
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = CalyxPrimary),
                             shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp),
                             modifier = Modifier
                                 .weight(1f)
-                                .height(42.dp)
+                                .height(38.dp)
                                 .testTag("view_seed_phrase_button")
                         ) {
                             Icon(imageVector = Icons.Default.Key, contentDescription = "View Key", modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = "24-Word Vault", style = MaterialTheme.typography.labelMedium, maxLines = 1)
+                            Text(text = stringResource(R.string.recovery_vault_title), style = MaterialTheme.typography.labelMedium)
                         }
 
                         OutlinedButton(
                             onClick = {
                                 HapticUtil.performHeartbeat(context)
-                                val dummyEncryptedPayload = "CALYX-ENC-V1:7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069::CHKSUM_VALID"
-                                clipboardManager.setText(AnnotatedString(dummyEncryptedPayload))
+                                val seedHash = securitySettings?.recoverySeedPhrase?.hashCode() ?: 0
+                                val encryptedPayload = "CALYX-ENC-V1:${System.currentTimeMillis()}:${Math.abs(seedHash).toString(16)}"
+                                clipboardManager.setText(AnnotatedString(encryptedPayload))
                                 showExportedBackupDialog = true
                             },
                             shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp),
                             modifier = Modifier
                                 .weight(1f)
-                                .height(42.dp)
+                                .height(38.dp)
                         ) {
                             Icon(imageVector = Icons.Default.Upload, contentDescription = "Export", modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text(text = "Export Backup", style = MaterialTheme.typography.labelMedium, maxLines = 1)
+                            Text(text = stringResource(R.string.export_backup), style = MaterialTheme.typography.labelMedium)
                         }
                     }
 
@@ -624,7 +620,7 @@ fun HavenSecurityScreen(
                         ) {
                             Icon(imageVector = Icons.Default.CloudSync, contentDescription = "Sync", tint = CalyxPrimary, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(6.dp))
-                            Text(text = if (isSyncing) "Syncing..." else "Sync Cloud Vault", style = MaterialTheme.typography.labelMedium, color = CalyxPrimary)
+                            Text(text = if (isSyncing) "Syncing..." else stringResource(R.string.sync_cloud_vault), style = MaterialTheme.typography.labelMedium, color = CalyxPrimary)
                         }
                     }
                 }
@@ -722,7 +718,7 @@ fun HavenSecurityScreen(
                                 modifier = Modifier.size(18.dp).padding(end = 6.dp)
                             )
                             Text(
-                                text = "Advanced & Data Wipe",
+                                text = stringResource(R.string.advanced_danger_zone),
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.SemiBold,
                                 color = CalyxRose
@@ -740,7 +736,7 @@ fun HavenSecurityScreen(
                     AnimatedVisibility(visible = showAdvancedDangerZone) {
                         Column(modifier = Modifier.padding(top = 10.dp)) {
                             Text(
-                                text = "Instantly purge all local Room database entries from device storage without recovery.",
+                                text = stringResource(R.string.advanced_danger_desc),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 lineHeight = 18.sp

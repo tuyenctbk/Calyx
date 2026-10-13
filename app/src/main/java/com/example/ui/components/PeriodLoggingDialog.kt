@@ -46,9 +46,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.R
 import com.example.data.local.entities.CyclePeriodEntity
 import com.example.ui.theme.CalyxPrimary
 import com.example.ui.theme.CalyxRose
@@ -125,7 +127,7 @@ fun PeriodLoggingDialog(
                     }
 
                     IconButton(onClick = onDismiss) {
-                        Icon(Icons.Default.Close, contentDescription = "Close")
+                        Icon(Icons.Default.Close, contentDescription = stringResource(R.string.close))
                     }
                 }
 
@@ -146,7 +148,7 @@ fun PeriodLoggingDialog(
                     ) {
                         Icon(Icons.Default.Add, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Log Period Start Date")
+                        Text(stringResource(R.string.dialog_log_period_title))
                     }
 
                     Spacer(modifier = Modifier.height(14.dp))
@@ -304,7 +306,7 @@ fun PeriodLoggingDialog(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text("Bleeding Duration", style = MaterialTheme.typography.labelMedium)
+                        Text(stringResource(R.string.dialog_bleeding_duration), style = MaterialTheme.typography.labelMedium)
                         Text("$periodDurationDays Days", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = CalyxRose)
                     }
 
@@ -324,7 +326,7 @@ fun PeriodLoggingDialog(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text("Expected Cycle Length", style = MaterialTheme.typography.labelMedium)
+                        Text(stringResource(R.string.dialog_expected_cycle), style = MaterialTheme.typography.labelMedium)
                         Text("$cycleLengthDays Days", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = CalyxPrimary)
                     }
 
@@ -351,7 +353,7 @@ fun PeriodLoggingDialog(
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier.weight(1f)
                         ) {
-                            Text("Back", color = MaterialTheme.colorScheme.onSurface)
+                            Text(stringResource(R.string.btn_back), color = MaterialTheme.colorScheme.onSurface)
                         }
 
                         Button(
@@ -385,7 +387,7 @@ fun PeriodLoggingDialog(
                         ) {
                             Icon(Icons.Default.Check, contentDescription = null, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(6.dp))
-                            Text("Save")
+                            Text(stringResource(R.string.btn_save))
                         }
                     }
                 }

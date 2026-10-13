@@ -53,4 +53,39 @@ class ExampleRobolectricTest {
     assertTrue(slide3Title.isNotEmpty())
     assertTrue(startBtn.isNotEmpty())
   }
+
+  @Test
+  fun `verify daily symptom log entity storage and dao operations`() = kotlinx.coroutines.runBlocking {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val db = androidx.room.Room.inMemoryDatabaseBuilder(
+        context,
+        com.example.data.local.CalyxDatabase::class.java
+    ).allowMainThreadQueries().build()
+
+    val dao = db.dailySymptomDao()
+    val testLog = com.example.data.local.entities.DailySymptomLogEntity(
+        date = "2026-10-12",
+        mood = "Energetic & Focused",
+        moodScore = 4,
+        energyLevel = 8,
+        physicalSymptoms = "Mild Cramps, Headaches",
+        painLevel = 3,
+        bbt = 36.65f,
+        stressLevel = 2,
+        notes = "Felt great during morning workout"
+    )
+
+    dao.insertLog(testLog)
+    val retrieved = dao.getLogForDate("2026-10-12")
+
+    org.junit.Assert.assertNotNull(retrieved)
+    assertEquals("2026-10-12", retrieved?.date)
+    assertEquals("Energetic & Focused", retrieved?.mood)
+    assertEquals(8, retrieved?.energyLevel)
+    assertTrue(retrieved?.physicalSymptoms?.contains("Mild Cramps") == true)
+    assertEquals(3, retrieved?.painLevel)
+
+    db.close()
+  }
 }
+

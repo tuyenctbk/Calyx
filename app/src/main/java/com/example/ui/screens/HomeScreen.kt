@@ -652,39 +652,32 @@ fun HomeScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(6.dp))
+            val displayBbt = if (todayLog.bbt > 0f) "${String.format(Locale.US, "%.2f", todayLog.bbt)}°C" else if (logs.isNotEmpty()) "${String.format(Locale.US, "%.2f", logs.first().bbt)}°C" else "-- °C"
+            val displayHrv = if (todayLog.hrv > 0) "${todayLog.hrv} ms" else if (logs.isNotEmpty() && logs.first().hrv > 0) "${logs.first().hrv} ms" else "-- ms"
+            val displaySleep = if (todayLog.sleepHours > 0f) "${String.format(Locale.US, "%.1f", todayLog.sleepHours)}h" else if (logs.isNotEmpty() && logs.first().sleepHours > 0f) "${String.format(Locale.US, "%.1f", logs.first().sleepHours)}h" else "-- h"
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
+
                 BiomarkerMetricCard(
                     icon = Icons.Default.Thermostat,
                     label = "BBT TEMP",
-                    value = if (activePhase == CyclePhase.OVULATORY || activePhase == CyclePhase.LUTEAL) "36.72°C" else "36.35°C",
-                    delta = if (activePhase == CyclePhase.OVULATORY) "+0.35° Shift" else "Baseline",
+                    value = displayBbt,
+                    delta = if (todayLog.bbt > 0f) "Logged Today" else if (activePhase == CyclePhase.OVULATORY) "+0.35° Shift" else "Tap to log",
                     accentColor = if (activePhase == CyclePhase.OVULATORY) PhaseOvulatoryColor else CalyxSecondary,
-                    onClick = { showDeepPhysiologySheet = true },
+                    onClick = { showQuickLogSheet = true },
                     modifier = Modifier.weight(1f)
                 )
 
                 BiomarkerMetricCard(
                     icon = Icons.Default.Favorite,
                     label = "MEAN HRV",
-                    value = when (activePhase) {
-                        CyclePhase.OVULATORY -> "68 ms"
-                        CyclePhase.FOLLICULAR -> "64 ms"
-                        CyclePhase.LUTEAL -> "52 ms"
-                        CyclePhase.MENSTRUAL -> "48 ms"
-                    },
-                    delta = when (activePhase) {
-                        CyclePhase.OVULATORY -> "High Recovery"
-                        CyclePhase.FOLLICULAR -> "Building"
-                        CyclePhase.LUTEAL -> "Manage Cortisol"
-                        CyclePhase.MENSTRUAL -> "Rest Mode"
-                    },
+                    value = displayHrv,
+                    delta = if (todayLog.hrv > 0) "Logged Today" else "Tap to log",
                     accentColor = CalyxPrimary,
-                    onClick = { showDeepPhysiologySheet = true },
+                    onClick = { showQuickLogSheet = true },
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -698,10 +691,10 @@ fun HomeScreen(
                 BiomarkerMetricCard(
                     icon = Icons.Default.Bedtime,
                     label = "SLEEP REST",
-                    value = "${todayLog.sleepHours}h",
-                    delta = "Optimal Continuity",
+                    value = displaySleep,
+                    delta = if (todayLog.sleepHours > 0f) "Logged Today" else "Tap to log",
                     accentColor = CalyxTertiary,
-                    onClick = { showDeepPhysiologySheet = true },
+                    onClick = { showQuickLogSheet = true },
                     modifier = Modifier.weight(1f)
                 )
 

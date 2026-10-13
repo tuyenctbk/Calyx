@@ -64,7 +64,7 @@ class CalyxViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         val database = CalyxDatabase.getDatabase(application)
-        repository = CalyxRepository(database.calyxDao())
+        repository = CalyxRepository(database.calyxDao(), database.dailySymptomDao())
 
         // Create notification channel on init
         CycleNotificationHelper.createNotificationChannel(application)
